@@ -25,13 +25,13 @@ let playbackRate = 1
 document.querySelector("#faster").addEventListener("click", function(){
 	console.log("Fast Video")
 	video.playbackRate *= 1.10
-	console.log("New speed is set to" + video.playbackRate)
+	console.log("New speed is set to" + video.playbackRate + "%")
 });
 
 document.querySelector("#slower").addEventListener("click", function(){
 	console.log("Slow Video")
 	video.playbackRate *= .9
-	console.log("New speed is set to" + video.playbackRate)
+	console.log("New speed is set to" + video.playbackRate + "%")
 });
 
 
@@ -70,12 +70,12 @@ let oldStyleButton = document.querySelector("#vintage");
 oldStyleButton.addEventListener("click", changeToOldSchool);
 
 function changeToOldSchool() {
-    document.querySelector("body").setAttribute('class', 'oldSchool');
+    document.querySelector("video").setAttribute('class', 'oldSchool');
 }
 
 let newStyleButton = document.querySelector("#orig");
 newStyleButton.addEventListener("click", changeToNew);
 
 function changeToNew() {
-    document.querySelector("body").removeAttribute('class');
+    document.querySelector("video").removeAttribute('class');
 }
