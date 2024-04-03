@@ -46,7 +46,6 @@ function skipVideo(){
 	}
 }
 
-
 document.querySelector("#mute").addEventListener("click", function(){
 	video.muted = true;
 	console.log("Video is muted: " + video.muted)
@@ -57,19 +56,26 @@ document.querySelector("#mute").addEventListener("click", function(){
 })
 
 let volumePicker = document.querySelector("#slider");
-volumePicker.addEventListener("input", changeVolume);
+volumePicker.addEventListener("input", function(){
+	
+});
 function changeVolume(event){
 	video.audio = event.target.value;
 	console.log(video.audio)
-
 }
 
 
 
+let oldStyleButton = document.querySelector("#vintage");
+oldStyleButton.addEventListener("click", changeToOldSchool);
 
+function changeToOldSchool() {
+    document.querySelector("body").setAttribute('class', 'oldSchool');
+}
 
+let newStyleButton = document.querySelector("#orig");
+newStyleButton.addEventListener("click", changeToNew);
 
-
-
-
-
+function changeToNew() {
+    document.querySelector("body").removeAttribute('class');
+}
