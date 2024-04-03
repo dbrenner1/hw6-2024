@@ -55,15 +55,15 @@ document.querySelector("#mute").addEventListener("click", function(){
 	
 })
 
-let volumePicker = document.querySelector("#slider");
-volumePicker.addEventListener("input", function(){
-	
-});
-function changeVolume(event){
-	video.audio = event.target.value;
-	console.log(video.audio)
-}
+let volumeLevel = document.querySelector("#slider");
+volumeLevel.addEventListener("input", changeVolume);
 
+function changeVolume(event){
+    let video = document.querySelector("video");
+    let normalizedVolume = event.target.value / 100; 
+    video.volume = normalizedVolume;
+    console.log((video.volume) * 100 + "%"); 
+}
 
 
 let oldStyleButton = document.querySelector("#vintage");
