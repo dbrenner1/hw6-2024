@@ -7,6 +7,7 @@ window.addEventListener("load", function() {
 	video.loop = false;
 	console.log("Auto play is set to " + video.autoplay)
 	console.log("Loop is set to " + video.loop)
+	console.log(video.playbackRate * 100 + "%" )
 });
 
 
@@ -60,9 +61,10 @@ volumeLevel.addEventListener("input", changeVolume);
 
 function changeVolume(event){
     let video = document.querySelector("video");
-    let normalizedVolume = event.target.value / 100; 
-    video.volume = normalizedVolume;
-    console.log((video.volume) * 100 + "%"); 
+    let videoVolume = event.target.value / 100 ; 
+
+    video.volume = videoVolume;
+    console.log((video.volume * 100) + "%"); 
 }
 
 
