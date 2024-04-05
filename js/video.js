@@ -7,13 +7,14 @@ window.addEventListener("load", function() {
 	video.loop = false;
 	console.log("Auto play is set to " + video.autoplay)
 	console.log("Loop is set to " + video.loop)
+	
 });
 
 
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play()
-	console.log(video.volume * 100 + "%" )
+	console.log(video.volume * 100 + "%")
 }); 
 
 document.querySelector("#pause").addEventListener("click", function(){
@@ -48,15 +49,19 @@ function skipVideo(){
 }
 
 document.querySelector("#mute").addEventListener("click", function(){
-	video.muted = true;
-	console.log("Video is muted: " + video.muted)
-	if (video.muted = true){
-		document.querySelector("#mute").innerHTML = "Unmute";
-	}
-	
-})
+    if (video.muted) {
+        video.muted = false;
+        console.log("Video is muted: " + video.muted);
+        document.querySelector("#mute").innerHTML = "Mute";
+    } else {
+        video.muted = true;
+        console.log("Video is muted: " + video.muted);
+        document.querySelector("#mute").innerHTML = "Unmute";
+    }
+});
 
-let volumeLevel = document.querySelector("#slider");
+
+let videoVolume = document.querySelector("#slider");
 volumeLevel.addEventListener("input", changeVolume);
 
 function changeVolume(event){
