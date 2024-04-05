@@ -61,14 +61,14 @@ document.querySelector("#mute").addEventListener("click", function(){
 });
 
 
-let videoVolume = document.querySelector("#slider");
-volumeLevel.addEventListener("input", changeVolume);
+let volumeSlider = document.querySelector("#slider");
+volumeSlider.addEventListener("input", changeVolume);
 
 function changeVolume(event){
     let video = document.querySelector("video");
-    let videoVolume = event.target.value / 100 ; 
+    let volume = event.target.value / 100 ; 
 
-    video.volume = videoVolume;
+    video.volume = volume;
     console.log((video.volume * 100) + "%"); 
 }
 
